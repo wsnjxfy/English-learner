@@ -1,0 +1,155 @@
+/* ================= 页面整体 ================= */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f9fafc;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ================= 英文框 ================= */
+.english-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
+  max-width: 1400px;
+  min-height: 200px;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  background-color: #e3f2fd;
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+  word-break: break-word;
+}
+
+/* ================= 中文框 ================= */
+.chinese-box {
+  display: none;
+  width: 95vw;
+  max-width: 1400px;
+  min-height: 80px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+  background-color: #f0f4f8;
+  border-radius: 16px;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  word-break: break-word;
+}
+
+/* ================= 按钮和下拉容器 ================= */
+.button-container {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: rgba(249, 250, 252, 0.95);
+  padding: 14px 22px;
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  z-index: 1000;
+  justify-content: center;
+}
+
+/* ================= 按钮样式 ================= */
+button {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #42a5f5;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #1e88e5;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* ================= 下拉菜单 ================= */
+.custom-select {
+  font-size: 16px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  min-width: 150px;
+}
+
+/* ================= 平板适配 ================= */
+@media (max-width: 1024px) {
+  .english-box,
+  .chinese-box {
+    width: 90vw;
+  }
+}
+
+/* ================= 手机端强化适配 ================= */
+@media (max-width: 480px) {
+
+  /* 英文框放大稍微缩小两个字号 */
+  .english-box {
+    font-size: 28px !important;   /* 原来38px，缩小2个字号 */
+    min-height: 150px !important;
+    line-height: 1.5 !important;
+    padding: 20px !important;
+  }
+
+  /* 中文框保持原先大小 */
+  .chinese-box {
+    font-size: 18px !important;
+    min-height: 90px !important;
+  }
+
+  /* 底部操作栏放大，但预留空白 */
+  .button-container {
+    bottom: 16px !important;
+    width: 94vw !important;
+    padding: 18px !important;
+    gap: 16px !important;
+    justify-content: center !important;
+  }
+
+  /* 翻译/下一句按钮保持大尺寸 */
+  button {
+    font-size: 26px !important;
+    padding: 18px 28px !important;
+    border-radius: 14px !important;
+    min-width: 42% !important;
+  }
+
+  /* Chapter / Sentence 下拉框缩小到原来的0.4倍，避免遮挡 */
+  .custom-select {
+    font-size: 9px !important;      /* 原来22px，约0.4倍 */
+    padding: 4px 6px !important;    /* 缩小 padding */
+    min-width: 40% !important;      /* 保持小宽度 */
+  }
+
+  /* 页面底部预留空白，避免被按钮遮挡 */
+  body {
+    padding-bottom: 120px !important;  /* 预留足够滚动空间 */
+  }
+}

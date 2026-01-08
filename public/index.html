@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>章节逐句翻译</title>
+<!-- ⚠️ 关键：viewport，保证手机生效 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div id="english" class="english-box">正在加载章节...</div>
+  <div id="translation" class="chinese-box"></div>
+
+  <div class="button-container">
+    <select id="chapterSelect" class="custom-select"></select>
+    <select id="sentenceSelect" class="custom-select"></select>
+    <button id="translateBtn">翻译</button>
+    <button id="nextBtn">下一句</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
